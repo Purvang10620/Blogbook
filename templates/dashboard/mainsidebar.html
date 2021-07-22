@@ -1,0 +1,61 @@
+{% load static %}
+
+    <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar__list">
+            <li class="active">
+                <a class="js-arrow" href="main" id="main">
+                    Dashboard</a>
+            </li>
+            <li class="has-sub">
+                <a class="js-arrow" href="#">
+                    Article</a>
+                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                    {% for i in articleid %}                             
+                        <li>
+                            <a href="viewarticle" class="view_article">{{i.articleName}}</a>
+                        </li>
+                    {% endfor %}
+                    
+                    <li>
+                        <a href="addarticle" id="addarticle"><i class="fa fa-plus" style="margin:0"></i> Add Article</a>
+                    </li>
+                </ul>
+            </li>
+            
+            <!-- <li class="has-sub">
+                <a class="js-arrow" href="#">
+                    Marketing</a>
+                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                   
+                    <li>
+                        <a href="#"><i class="fa fa-share"></i> Share</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-link"></i> URL Builder</a>
+                    </li>
+                </ul>
+            </li> -->
+            
+            <li>
+                <a class="js-arrow" href="#" id="setting">
+                    Settings</a>
+            </li>
+            <li>
+                <a class="js-arrow" href="#" data-toggle="modal" data-target="#mymodal">
+                    Help</a>
+            </li>
+            <li><a href="" id="back" title="">Your Blogs</a></li>
+        </ul>
+        
+    </nav>
+
+<!-- Jquery JS-->
+    <!-- Jquery JS-->
+    <script src="{% static 'vendor/jquery-3.2.1.min.js' %}"></script>
+    
+    <!-- Main JS-->
+    <script src="{% static 'js/main-dashboard.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    
+
+

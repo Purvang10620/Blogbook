@@ -1,0 +1,53 @@
+{% load static %}
+<div class="section__content section__content--p30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-full s-content__main custom_main">
+
+                    <h1>Edit Profile.</h1>
+
+                    <form name="cForm" id="cForm" method="post" action="updateprofile" enctype="multipart/form-data">
+                        <fieldset>
+                            {% csrf_token %}
+                            <div class="form-field">
+                                <input type="text" name="username" type="text" id="username" value="{{uname.username}}" class="full-width" disabled="">
+                                
+                            </div>
+                            <div class="form-field">
+                                <input type="text" name="firstname" type="text" id="firstname" value="{{uname.first_name}}" class="full-width" disabled="">
+                                
+                            </div>
+                            <div class="form-field">
+                                <input type="text" name="lastname" type="text" id="lastname" class="full-width" value="{{uname.last_name}}" disabled="">
+                                
+                            </div>
+                        
+                            <div class="form-field">
+                                <input type="text" name="city" id="city" value="{{udetails.city}}" class="full-width" placeholder="Enter Your City">
+                                
+                            </div>
+
+                            <div class="form-field">
+                                <input type="text" name="country" id="country" class="full-width" value="{{udetails.country}}" placeholder="Enter Your Country">
+                            </div>
+                            <div class="form-field">
+                                <input type="tel" name="phone" id="phone" class="full-width" value="{{udetails.phone}}" placeholder="Enter Your Phone Number">
+                            </div>
+                            <div class="form-field">
+                                <label>Upload image</label>    <input type="file"name="profilepic" id="profilepic" class="full-width" accept="image/x-png,image/gif,image/jpeg"/>
+                                {%if udetails.profilepic %}
+                                <img src="{{ udetails.profilepic.url }}" style="margin-left: 5px;width: 200px; ">
+                                {% endif %}
+                            </div>
+                            
+                            
+                            <button type="submit" class="submit btn btn--primary full-width">Update Profile</button>
+                            
+
+                        </fieldset>
+                    </form> <!-- end form -->
+                </div>
+            </div>
+        </div>
+    </div>
