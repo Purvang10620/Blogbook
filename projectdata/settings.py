@@ -25,7 +25,7 @@ SECRET_KEY = 'fo(g8db)#yg_eiwlc&6@tv0copxv2_8i%0n^-^xze^rr^i!_!@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','blogbook-app.herokuapp.com']
 
 
 # Application definition
